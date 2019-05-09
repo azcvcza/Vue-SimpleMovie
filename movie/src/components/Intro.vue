@@ -1,26 +1,17 @@
 <template>
-    <div id="app">
-    <section class="hero is-primary is-medium">
-      <router-view></router-view>
-
-      <div class="hero-foot">
-        <div class="columns is-mobile">
-          <div v-for="movieChoice in movieChoices" class="column">
-            <router-link :to="`/${movieChoice.id}`" tag="li" class="movie-choice">
-              <i :class="[{ 'fa fa-check-circle favorite-check': movieChoice.favorite }]" aria-hidden="true"></i>
-              <img :src="`${movieChoice.smallImgSrc}`" class="desktop"/>
-              <p class="mobile movie-title">{{ movieChoice.subtitle }}</p>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-   
-    
-  </div>
+	<div class="hero-body" style="background: #1e1d1d">
+		<div class="container has-text-centered">
+			<div class="columns">
+				<div class="column is-half is-offset-one-quarter vertical-align">
+					<h1 class="home-intro">VueFlix</h1>
+					<p
+						class="home-subintro"
+					>Select a movie below from the list of critically acclaimed Christopher Nolan films.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
-
 <script>
 const movies = {
   "dunkirk": {
@@ -90,22 +81,6 @@ const movies = {
   }
 }
 export default {
-  name: 'App',
-  data () {
-    return {
-      movieChoices: movies
-    }
-  },
+	name:'Intro'
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
